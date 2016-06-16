@@ -1,0 +1,30 @@
+﻿body {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+span {
+    font-style: italic;
+}
+
+.configuration-label {
+    font-size: 12px;
+    font-family: 'Segoe UI', 'Tahoma', 'Arial', 'Verdana';
+    line-height: 14px;
+    margin: 0 10px 0 0;
+    min-width: 75px;
+    padding: 4px 0 2px 0;
+    color: #424245;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.configuration-selector {
+    margin-top: 10px;
+    height: 20px;
+    padding: 0 5px;
+    position: relative;
+}
+
+    .configuration-selector:hover {
+        cursor: pointer;
+    }

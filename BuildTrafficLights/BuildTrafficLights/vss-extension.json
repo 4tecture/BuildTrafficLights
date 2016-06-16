@@ -1,0 +1,86 @@
+{
+  "manifestVersion": 1,
+  "id": "BuildTrafficLights",
+  "version": "0.1.15",
+  "name": "Build Traffic Lights",
+  "scopes": [ "vso.work", "vso.work_write" ],
+  "description": "This extension allows you to add build traffic lights to your dashboard to visualize the state of a specific build definition and its builds.",
+  "publisher": "4tecture",
+  "icons": {
+    "default": "img/logo.png"
+  },
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "tags": [
+    "Sample"
+  ],
+  "branding": {
+    "color": "rgb(220, 235, 252)",
+    "theme": "light"
+  },
+  "files": [
+    {
+      "path": "css",
+      "addressable": true
+    },
+    {
+      "path": "img",
+      "addressable": true
+    },
+    {
+      "path": "scripts",
+      "addressable": true
+    },
+    {
+      "path": "TrafficLightsWidget.html",
+      "addressable": true
+    },
+    {
+      "path": "TrafficLightsWidgetConfiguration.html",
+      "addressable": true
+    }
+  ],
+  "categories": [
+    "Integrate"
+  ],
+  "contributions": [
+    {
+      "id": "BuildTrafficLightsWidget",
+      "type": "ms.vss-dashboards-web.widget",
+      "targets": [
+        "ms.vss-dashboards-web.widget-catalog",
+        "4tecture.BuildTrafficLights.BuildTrafficLightsWidget.Configuration"
+      ],
+      "properties": {
+        "name": "Build Traffic Lights Widgets",
+        "description": "This widget allows you to add build traffic lights to your dashboard to visualize the state of a specific build definition and its builds.",
+        "catalogIconUrl": "img/CatalogIcon.png",
+        "previewImageUrl": "img/preview.png",
+        "uri": "TrafficLightsWidget.html",
+        "supportedSizes": [
+          {
+            "rowSpan": 1,
+            "columnSpan": 2
+          }
+        ],
+        "supportedScopes": [
+          "project_team"
+        ]
+      }
+    },
+    {
+      "id": "BuildTrafficLightsWidget.Configuration",
+      "type": "ms.vss-dashboards-web.widget-configuration",
+      "targets": [ "ms.vss-dashboards-web.widget-configuration" ],
+      "properties": {
+        "name": "Build Traffic Lights Widget Configuration",
+        "description": "Configures Build Traffic Lights Widget",
+        "uri": "TrafficLightsWidgetConfiguration.html"
+      }
+    }
+
+  ]
+}
