@@ -43,10 +43,15 @@
         // Wait for the SDK to be initialized
         VSS.ready(function () {
             require(["Scripts/TrafficLightsWidget"], function (tlwidget) {
-                
+
             });
         });
     </script>
-    <div id="content"></div>
+    <div class="widget" >
+        <h2 class="title" id="buildDefinitionTitle"></h2>
+        <div class="content" id="content">
+
+        </div>
+    </div>
 </body>
 </html>

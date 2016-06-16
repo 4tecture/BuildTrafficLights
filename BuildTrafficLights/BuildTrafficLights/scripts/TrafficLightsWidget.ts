@@ -15,24 +15,30 @@ function GetSettings(widgetSettings) {
 function RenderTrafficLights(WidgetHelpers, widgetSettings) {
     var config = GetSettings(widgetSettings);
     if (config != null) {
-        var trafficLights = new TrafficLights.TrafficLights(VSS.getWebContext().project.name, 2, 5, document.getElementById("content")); // todo
-        trafficLights.renderLights();
-        return WidgetHelpers.WidgetStatusHelper.Success();
+        var trafficLights = new TrafficLights.TrafficLights(VSS.getWebContext().project.name, config.buildDefinition, config.numberOfLastBuilds, document.getElementById("content")); // todo
+        trafficLights.updateBuildState();
     }
     else {
-        return WidgetHelpers.WidgetStatusHelper.Failure("The configuration is missing!");
+        var content = document.getElementById("content");
+        var noconfigtitle = document.createElement("h2");
+        noconfigtitle.innerHTML = "Not configured!";
+        content.appendChild(noconfigtitle);
     }
+    
 }
 
 
 VSS.require("TFS/Dashboards/WidgetHelpers", function (WidgetHelpers) {
+    WidgetHelpers.IncludeWidgetStyles();
     VSS.register("BuildTrafficLightsWidget", function () {
         return {
             load: function (widgetSettings) {
-                RenderTrafficLights(WidgetHelpers, widgetSettings);    
+                RenderTrafficLights(WidgetHelpers, widgetSettings);  
+                return WidgetHelpers.WidgetStatusHelper.Success();  
             },
             reload: function (widgetSettings) {
                 RenderTrafficLights(WidgetHelpers, widgetSettings);
+                return WidgetHelpers.WidgetStatusHelper.Success();
             }
         };
     });

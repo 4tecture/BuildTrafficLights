@@ -10,7 +10,6 @@ define(["require", "exports", "TFS/Build/RestClient"], function (require, export
         }
         TrafficLightsWidgetConfiguration.prototype.load = function (widgetSettings, widgetConfigurationContext) {
             var _this = this;
-            var _that = this;
             this.widgetConfigurationContext = widgetConfigurationContext;
             this.initializeOptions(widgetSettings);
             this.selectBuildDefinition.addEventListener("change", function () {
@@ -61,6 +60,7 @@ define(["require", "exports", "TFS/Build/RestClient"], function (require, export
     }());
     exports.TrafficLightsWidgetConfiguration = TrafficLightsWidgetConfiguration;
     VSS.require(["TFS/Dashboards/WidgetHelpers"], function (WidgetHelpers) {
+        WidgetHelpers.IncludeWidgetConfigurationStyles();
         VSS.register("BuildTrafficLightsWidget.Configuration", function () {
             var configuration = new TrafficLightsWidgetConfiguration(WidgetHelpers);
             return configuration;

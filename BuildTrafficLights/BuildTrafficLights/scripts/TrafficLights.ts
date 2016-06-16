@@ -5,32 +5,54 @@ import BuildRestClient = require("TFS/Build/RestClient");
 export class TrafficLights {
 
     projectname: string;
-    buildDefinition: number;
+    buildDefinitionId: number;
+    buildDefinitionName: string;
     numberOfBuilds: number;
     trafficLightsElement: HTMLElement;
     builds: Contracts.Build[];
 
     constructor(projectname: string, builddefinition: number, numberofbuilds: number, element: HTMLElement) {
         this.projectname = projectname
-        this.buildDefinition = builddefinition;
+        this.buildDefinitionId = builddefinition;
         this.numberOfBuilds = numberofbuilds;
         this.trafficLightsElement = element;
     }
 
     public updateBuildState() {
         var buildClient = BuildRestClient.getClient();
-        buildClient.getBuilds(this.projectname, [this.buildDefinition], undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, this.numberOfBuilds).then((buildResults: Contracts.Build[]) => {
+        buildClient.getBuilds(this.projectname, [this.buildDefinitionId], undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, this.numberOfBuilds).then((buildResults: Contracts.Build[]) => {
             this.builds = buildResults;
+            buildClient.getDefinition(this.buildDefinitionId, this.projectname).then((buildDefinitionResult: Contracts.DefinitionReference) => {
+                this.buildDefinitionName = buildDefinitionResult.name;
+                this.renderLights();
+            }, err => { this.renderLights(); });
         });
     }
 
     public renderLights() {
-        this.updateBuildState();
+        document.getElementById("buildDefinitionTitle").innerHTML = this.buildDefinitionName;
 
-        for (var i = 0; i < this.builds.length; i++) {
-            var tlDiv = document.createElement("div");
-            tlDiv.innerHTML = "<h2>" + this.builds[i].buildNumber + "</h2><span>Status: " + this.builds[i].status.toString() + "</span > ";
-            this.trafficLightsElement.appendChild(tlDiv);
+        if (this.builds != null && this.builds.length > 0) {
+
+            if (this.trafficLightsElement.hasChildNodes) { // todo
+                while (this.trafficLightsElement.hasChildNodes()) { // todo
+                    this.trafficLightsElement.removeChild(this.trafficLightsElement.lastChild);
+                }
+            }
+
+            for (var i = 0; i < this.builds.length; i++) {
+                var tlDiv = document.createElement("div");
+                tlDiv.innerHTML = "<span>Status: " + this.builds[i].status.toString() + "</span>";
+                this.trafficLightsElement.appendChild(tlDiv);
+            }
+        }
+        else {
+            var paragraph = document.createElement("p");
+            paragraph.innerHTML = "No builds available";
+            while (this.trafficLightsElement.hasChildNodes()) {
+                this.trafficLightsElement.removeChild(this.trafficLightsElement.lastChild);
+            }
+            this.trafficLightsElement.appendChild(paragraph);
         }
     }
 }

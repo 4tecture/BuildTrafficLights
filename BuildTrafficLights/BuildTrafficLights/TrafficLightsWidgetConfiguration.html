@@ -43,21 +43,24 @@
         // Wait for the SDK to be initialized
         VSS.ready(function () {
             require(["Scripts/TrafficLightsWidgetConfiguration"], function (configuration) {
-                
+
             });
         });
     </script>
-    <div class="container">
-        <fieldset>
-            <label class="configuration-label">Build Definition: </label>
-            <select id="selectBuildDefinition" class="configuration-selector"> </select>
-        </fieldset>
-    </div>
-    <div class="container">
-        <fieldset>
-            <label class="configuration-label">Number of Builds shown: </label>
-            <select id="selectNumberOfLastBuilds" class="configuration-selector"> </select>
-        </fieldset>
+    <div class="widget-configuration">
+        <div class="dropdown" id="query-path-dropdown">
+            <label>Build Definition: </label>
+            <div class="wrapper">
+                <select id="selectBuildDefinition">
+                </select>
+            </div>
+        </div>
+        <div class="dropdown" id="query-path-dropdown">
+            <label>Number of Builds shown: </label>
+            <div class="wrapper">
+                <select id="selectNumberOfLastBuilds"></select>
+            </div>
+        </div>
     </div>
 </body>
 </html>

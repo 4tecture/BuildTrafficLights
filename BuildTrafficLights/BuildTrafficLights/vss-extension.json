@@ -1,9 +1,9 @@
 {
   "manifestVersion": 1,
   "id": "BuildTrafficLights",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "name": "Build Traffic Lights",
-  "scopes": [ "vso.work", "vso.work_write" ],
+  "scopes": [ "vso.build_execute" ],
   "description": "This extension allows you to add build traffic lights to your dashboard to visualize the state of a specific build definition and its builds.",
   "publisher": "4tecture",
   "icons": {
@@ -18,7 +18,7 @@
     "Sample"
   ],
   "branding": {
-    "color": "rgb(220, 235, 252)",
+    "color": "rgb(0, 65, 200)",
     "theme": "light"
   },
   "files": [
@@ -63,7 +63,35 @@
         "supportedSizes": [
           {
             "rowSpan": 1,
+            "columnSpan": 1
+          },
+          {
+            "rowSpan": 1,
             "columnSpan": 2
+          },
+          {
+            "rowSpan": 1,
+            "columnSpan": 3
+          },
+          {
+            "rowSpan": 1,
+            "columnSpan": 4
+          },
+          {
+            "rowSpan": 2,
+            "columnSpan": 1
+          },
+          {
+            "rowSpan": 2,
+            "columnSpan": 2
+          },
+          {
+            "rowSpan": 2,
+            "columnSpan": 3
+          },
+          {
+            "rowSpan": 2,
+            "columnSpan": 4
           }
         ],
         "supportedScopes": [

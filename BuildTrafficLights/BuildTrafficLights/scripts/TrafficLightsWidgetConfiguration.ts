@@ -13,7 +13,6 @@ export class TrafficLightsWidgetConfiguration {
     }
 
     public load(widgetSettings, widgetConfigurationContext) {
-        var _that = this;
         this.widgetConfigurationContext = widgetConfigurationContext;
 
         this.initializeOptions(widgetSettings);
@@ -73,6 +72,7 @@ export class TrafficLightsWidgetConfiguration {
 
 
 VSS.require(["TFS/Dashboards/WidgetHelpers"], (WidgetHelpers) => {
+    WidgetHelpers.IncludeWidgetConfigurationStyles();
     VSS.register("BuildTrafficLightsWidget.Configuration", () => {
         var configuration = new TrafficLightsWidgetConfiguration(WidgetHelpers);
         return configuration;
