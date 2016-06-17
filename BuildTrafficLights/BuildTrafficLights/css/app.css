@@ -1,28 +1,47 @@
-﻿body {
-    font-family: 'Segoe UI', sans-serif;
+﻿
+
+.hidden {
+    display: none;
 }
 
-span {
-    font-style: italic;
+/* Traffic Light */
+.trafficlight {
+    background-color: #000;
+    box-shadow: 0 0 5px rgba(0,0,0, .8);
+    overflow: hidden;
+    padding: 10px;
+    width: 140px;
+    border-radius: 10px;
+    float:left;
+    margin:0 20px 0 0;
 }
 
-.configuration-label {
-    font-size: 12px;
-    line-height: 14px;
-    margin: 10px;
-    min-width: 75px;
-    padding: 4px 0 2px 0;
-    color: #424245;
-    display: inline-block;
+.trafficlight span.trafficlightbulb {
+    border-radius: 50px;
+    display: block;
+    height: 70px;
+    margin: 4px auto 0;
+    opacity: .3;
+    width: 70px;
 }
 
-.configuration-selector {
-    margin: 10px;
-    height: 20px;
-    padding: 0 5px;
-    position: relative;
+
+
+.trafficlight .buildnamecontainer{
+    color:white;
+    text-align:center;
+    height:40px;
+    padding-top:5px;
 }
 
-    .configuration-selector:hover {
-        cursor: pointer;
-    }
+/*! Light colours */
+#trafficlightbulb-red    { background-color: red; }
+#trafficlightbulb-yellow { background-color: orange; }
+#trafficlightbulb-green  { background-color: green; }
+
+/*! Active states */
+.trafficlight span.activelightbulb    { opacity: 1; }
+.trafficlight #trafficlightbulb-red.activelightbulb    { box-shadow: 0 0 10px red; }
+.trafficlight #trafficlightbulb-yellow.activelightbulb { box-shadow: 0 0 10px orange; }
+.trafficlight #trafficlightbulb-green.activelightbulb  { box-shadow: 0 0 10px green; }
+

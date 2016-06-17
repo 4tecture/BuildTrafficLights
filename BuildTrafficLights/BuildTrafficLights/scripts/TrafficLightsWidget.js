@@ -1,19 +1,19 @@
-define(["require", "exports", "scripts/TrafficLights"], function (require, exports, TrafficLights) {
+define(["require", "exports", "scripts/TrafficLightsCollection"], function (require, exports, TrafficLights) {
     "use strict";
     function GetSettings(widgetSettings) {
         var config = JSON.parse(widgetSettings.customSettings.data);
         if (config != null) {
-            if (config.buildDefinition != null || config.buildDefinition != null) {
+            if (config.buildDefinition != null) {
                 return config;
             }
             return null;
         }
     }
     function RenderTrafficLights(WidgetHelpers, widgetSettings) {
+        var numberOfBuilds = widgetSettings.size.columnSpan;
         var config = GetSettings(widgetSettings);
         if (config != null) {
-            var trafficLights = new TrafficLights.TrafficLights(VSS.getWebContext().project.name, config.buildDefinition, config.numberOfLastBuilds, document.getElementById("content")); // todo
-            trafficLights.updateBuildState();
+            var trafficLights = new TrafficLights.TrafficLightsCollection(VSS.getWebContext().project.name, config.buildDefinition, numberOfBuilds, document.getElementById("content")); // todo
         }
         else {
             var content = document.getElementById("content");

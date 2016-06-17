@@ -63,7 +63,8 @@
     <None Include="package.json" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="scripts\TrafficLights.ts" />
+    <TypeScriptCompile Include="scripts\TrafficLight.ts" />
+    <TypeScriptCompile Include="scripts\TrafficLightsCollection.ts" />
     <TypeScriptCompile Include="scripts\TrafficLightsWidget.ts" />
     <TypeScriptCompile Include="scripts\TrafficLightsWidgetConfiguration.ts" />
     <TypeScriptCompile Include="typings\jquery\jquery.d.ts" />

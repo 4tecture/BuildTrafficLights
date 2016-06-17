@@ -15,7 +15,7 @@
     }
   ],
   "tags": [
-    "Sample"
+    "Build", "Build Status"
   ],
   "branding": {
     "color": "rgb(0, 65, 200)",
@@ -61,22 +61,6 @@
         "previewImageUrl": "img/preview.png",
         "uri": "TrafficLightsWidget.html",
         "supportedSizes": [
-          {
-            "rowSpan": 1,
-            "columnSpan": 1
-          },
-          {
-            "rowSpan": 1,
-            "columnSpan": 2
-          },
-          {
-            "rowSpan": 1,
-            "columnSpan": 3
-          },
-          {
-            "rowSpan": 1,
-            "columnSpan": 4
-          },
           {
             "rowSpan": 2,
             "columnSpan": 1

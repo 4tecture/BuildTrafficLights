@@ -6,7 +6,6 @@ define(["require", "exports", "TFS/Build/RestClient"], function (require, export
             this.widgetConfigurationContext = null;
             this.CurrentProject = VSS.getWebContext().project.name;
             this.selectBuildDefinition = document.getElementById("selectBuildDefinition");
-            this.selectNumberOfLastBuilds = document.getElementById("selectNumberOfLastBuilds");
         }
         TrafficLightsWidgetConfiguration.prototype.load = function (widgetSettings, widgetConfigurationContext) {
             var _this = this;
@@ -15,6 +14,7 @@ define(["require", "exports", "TFS/Build/RestClient"], function (require, export
             this.selectBuildDefinition.addEventListener("change", function () {
                 _this.widgetConfigurationContext.notify(_this.WidgetHelpers.WidgetEvent.ConfigurationChange, _this.WidgetHelpers.WidgetEvent.Args(_this.getCustomSettings()));
             });
+            document.getElementById("trafficlightswidgetconfiguration").classList.remove("hidden");
             return this.WidgetHelpers.WidgetStatusHelper.Success();
         };
         TrafficLightsWidgetConfiguration.prototype.initializeOptions = function (widgetSettings) {
@@ -28,27 +28,17 @@ define(["require", "exports", "TFS/Build/RestClient"], function (require, export
                     _this.selectBuildDefinition.add(b1);
                 }
             });
-            for (var i = 1; i <= 10; i++) {
-                var n1 = document.createElement("option");
-                n1.value = i.toString();
-                n1.text = i.toString();
-                this.selectNumberOfLastBuilds.add(n1);
-            }
             var config = JSON.parse(widgetSettings.customSettings.data);
             if (config != null) {
                 if (config.buildDefinition != null) {
                     this.selectBuildDefinition.value = config.buildDefinition;
-                }
-                if (config.buildDefinition != null) {
-                    this.selectNumberOfLastBuilds.value = config.numberOfLastBuilds;
                 }
             }
         };
         TrafficLightsWidgetConfiguration.prototype.getCustomSettings = function () {
             return {
                 data: JSON.stringify({
-                    buildDefinition: this.selectBuildDefinition.value,
-                    numberOfLastBuilds: this.selectNumberOfLastBuilds.value
+                    buildDefinition: this.selectBuildDefinition.value
                 })
             };
         };

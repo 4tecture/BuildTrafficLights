@@ -1,11 +1,11 @@
 ﻿/// <reference path='../node_modules/vss-web-extension-sdk/typings/VSS.d.ts' />
-/// <reference path="trafficlights.ts" />
-import TrafficLights = require("scripts/TrafficLights"); 
+/// <reference path="trafficlightscollection.ts" />
+import TrafficLights = require("scripts/TrafficLightsCollection"); 
 
 function GetSettings(widgetSettings) {
     var config = JSON.parse(widgetSettings.customSettings.data);
     if (config != null) {
-        if (config.buildDefinition != null || config.buildDefinition != null) {
+        if (config.buildDefinition != null) {
             return config;
         }
         return null;
@@ -13,10 +13,10 @@ function GetSettings(widgetSettings) {
 }
 
 function RenderTrafficLights(WidgetHelpers, widgetSettings) {
+    var numberOfBuilds = <number>widgetSettings.size.columnSpan;
     var config = GetSettings(widgetSettings);
     if (config != null) {
-        var trafficLights = new TrafficLights.TrafficLights(VSS.getWebContext().project.name, config.buildDefinition, config.numberOfLastBuilds, document.getElementById("content")); // todo
-        trafficLights.updateBuildState();
+        var trafficLights = new TrafficLights.TrafficLightsCollection(VSS.getWebContext().project.name, config.buildDefinition, numberOfBuilds, document.getElementById("content")); // todo
     }
     else {
         var content = document.getElementById("content");

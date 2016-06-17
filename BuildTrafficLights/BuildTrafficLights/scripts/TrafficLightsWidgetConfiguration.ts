@@ -6,8 +6,7 @@ export class TrafficLightsWidgetConfiguration {
     public CurrentProject = VSS.getWebContext().project.name;
 
     selectBuildDefinition: HTMLSelectElement = <HTMLSelectElement>document.getElementById("selectBuildDefinition");
-    selectNumberOfLastBuilds: HTMLSelectElement = <HTMLSelectElement>document.getElementById("selectNumberOfLastBuilds");
-
+    
     constructor(public WidgetHelpers) {
 
     }
@@ -23,6 +22,9 @@ export class TrafficLightsWidgetConfiguration {
                 this.widgetConfigurationContext.notify(this.WidgetHelpers.WidgetEvent.ConfigurationChange,
                     this.WidgetHelpers.WidgetEvent.Args(this.getCustomSettings()));
             });
+
+        document.getElementById("trafficlightswidgetconfiguration").classList.remove("hidden");
+
         return this.WidgetHelpers.WidgetStatusHelper.Success();
     }
 
@@ -37,20 +39,10 @@ export class TrafficLightsWidgetConfiguration {
             }
         });
 
-        for(var i = 1; i <= 10; i++) {
-            var n1 = document.createElement("option");
-            n1.value = i.toString();
-            n1.text = i.toString();
-            this.selectNumberOfLastBuilds.add(n1);
-        }
-
         var config = JSON.parse(widgetSettings.customSettings.data);
         if (config != null) {
             if (config.buildDefinition != null) {
                 this.selectBuildDefinition.value = config.buildDefinition;
-            }
-            if (config.buildDefinition != null) {
-                this.selectNumberOfLastBuilds.value = config.numberOfLastBuilds;
             }
         }
     }
@@ -58,8 +50,7 @@ export class TrafficLightsWidgetConfiguration {
     public getCustomSettings() {
         return {
             data: JSON.stringify({
-                buildDefinition: this.selectBuildDefinition.value,
-                numberOfLastBuilds: this.selectNumberOfLastBuilds.value
+                buildDefinition: this.selectBuildDefinition.value
             })
         };
     }
