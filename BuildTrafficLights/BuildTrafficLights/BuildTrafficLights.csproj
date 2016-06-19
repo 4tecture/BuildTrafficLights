@@ -42,9 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".vscode\tasks.json" />
+    <Content Include="screenshots\screen1.png" />
     <Content Include="TrafficLightsWidgetConfiguration.html" />
     <Content Include="web.config" />
     <Content Include="overview.md" />
+    <Content Include="license.md" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -60,7 +62,7 @@
     <Content Include="TrafficLightsWidget.html" />
     <Content Include="scripts\VSS.SDK.js" />
     <Content Include="test\TestSpec.js" />
-    <None Include="readme.md" />
+    <None Include="README.md" />
     <None Include="package.json" />
   </ItemGroup>
   <ItemGroup>

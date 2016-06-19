@@ -6,6 +6,7 @@
   "scopes": [ "vso.build_execute" ],
   "description": "This extension allows you to add build traffic lights to your dashboard to visualize the state of a specific build definition and its builds.",
   "publisher": "4tecture",
+  "public": true,
   "icons": {
     "default": "img/logo.png"
   },
@@ -31,11 +32,18 @@
     "home": {
       "uri": "https://www.4tecture.ch"
     },
+    "getstarted": {
+      "uri": "https://github.com/4tecture/BuildTrafficLights"
+    },
     "issues": {
       "uri": "https://github.com/4tecture/BuildTrafficLights"
     }
   },
-
+  "screenshots": [
+    {
+      "path": "screenshots/screen1.png"
+    }
+  ],
   "files": [
     {
       "path": "css",

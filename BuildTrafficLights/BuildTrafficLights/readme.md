@@ -1,6 +1,13 @@
 #Build Traffic Lights
 
-This extension contains a widget which visualizes the current build state of a build definition as a traffic light.
+This repository contains the source code for a VSTS / TFS extensions which allows you to add widgets to the dashboard which visualize the build state as a traffic light.
+The code originated as a sample code for a german professional journal and was therefore made public available for the readers.
+This extension should show you how to start developing a custom extension for VSTS and/or TFS. 
+
+You can install or download the extension from the marketplace: [https://marketplace.visualstudio.com/items?itemName=4tecture.BuildTrafficLights](https://marketplace.visualstudio.com/items?itemName=4tecture.BuildTrafficLights)
+
+###Screenshots
+![Screenshot](screenshots/screen1.png)
 
 ###Features
 
