@@ -62,7 +62,6 @@
     <Content Include="TrafficLightsWidget.html" />
     <Content Include="scripts\VSS.SDK.js" />
     <Content Include="test\TestSpec.js" />
-    <None Include="README.md" />
     <None Include="package.json" />
   </ItemGroup>
   <ItemGroup>

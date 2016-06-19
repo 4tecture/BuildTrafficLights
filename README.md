@@ -7,7 +7,7 @@ This extension should show you how to start developing a custom extension for VS
 You can install or download the extension from the marketplace: [https://marketplace.visualstudio.com/items?itemName=4tecture.BuildTrafficLights](https://marketplace.visualstudio.com/items?itemName=4tecture.BuildTrafficLights)
 
 ###Screenshots
-![Screenshot](screenshots/screen1.png)
+![Screenshot](BuildTrafficLights\BuildTrafficLights\screenshots/screen1.png)
 
 ###Features
 
