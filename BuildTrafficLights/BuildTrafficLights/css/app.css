@@ -12,36 +12,60 @@
     padding: 10px;
     width: 140px;
     border-radius: 10px;
-    float:left;
-    margin:0 20px 0 0;
+    float: left;
+    margin: 0 20px 0 0;
 }
 
-.trafficlight span.trafficlightbulb {
-    border-radius: 50px;
-    display: block;
-    height: 70px;
-    margin: 4px auto 0;
-    opacity: .3;
-    width: 70px;
-}
+    .trafficlight span.trafficlightbulb {
+        border-radius: 50px;
+        display: block;
+        height: 70px;
+        margin: 4px auto 0;
+        opacity: .3;
+        width: 70px;
+    }
 
 
 
-.trafficlight .buildnamecontainer{
-    color:white;
-    text-align:center;
-    height:40px;
-    padding-top:5px;
-}
+    .trafficlight .buildnamecontainer {
+        color: white;
+        text-align: center;
+        height: 40px;
+        padding-top: 5px;
+    }
+
+    .trafficlight .trafficlightbuildname {
+        display: block;
+        width: 120px;
+        word-wrap: break-word;
+    }
 
 /*! Light colours */
-#trafficlightbulb-red    { background-color: red; }
-#trafficlightbulb-yellow { background-color: orange; }
-#trafficlightbulb-green  { background-color: green; }
+#trafficlightbulb-red {
+    background-color: red;
+}
+
+#trafficlightbulb-yellow {
+    background-color: orange;
+}
+
+#trafficlightbulb-green {
+    background-color: green;
+}
 
 /*! Active states */
-.trafficlight span.activelightbulb    { opacity: 1; }
-.trafficlight #trafficlightbulb-red.activelightbulb    { box-shadow: 0 0 10px red; }
-.trafficlight #trafficlightbulb-yellow.activelightbulb { box-shadow: 0 0 10px orange; }
-.trafficlight #trafficlightbulb-green.activelightbulb  { box-shadow: 0 0 10px green; }
+.trafficlight span.activelightbulb {
+    opacity: 1;
+}
 
+.trafficlight #trafficlightbulb-red.activelightbulb {
+    box-shadow: 0 0 10px red;
+}
+
+.trafficlight #trafficlightbulb-yellow.activelightbulb {
+    box-shadow: 0 0 10px orange;
+}
+
+.trafficlight #trafficlightbulb-green.activelightbulb {
+    box-shadow: 0 0 10px green;
+}

@@ -44,6 +44,7 @@
     <None Include=".vscode\tasks.json" />
     <Content Include="TrafficLightsWidgetConfiguration.html" />
     <Content Include="web.config" />
+    <Content Include="overview.md" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

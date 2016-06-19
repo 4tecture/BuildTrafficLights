@@ -13,7 +13,7 @@ define(["require", "exports", "scripts/TrafficLightsCollection"], function (requ
         var numberOfBuilds = widgetSettings.size.columnSpan;
         var config = GetSettings(widgetSettings);
         if (config != null) {
-            var trafficLights = new TrafficLights.TrafficLightsCollection(VSS.getWebContext().project.name, config.buildDefinition, numberOfBuilds, document.getElementById("content")); // todo
+            var trafficLights = new TrafficLights.TrafficLightsCollection(VSS.getWebContext().project.name, config.buildDefinition, numberOfBuilds, document.getElementById("content"));
         }
         else {
             var content = document.getElementById("content");
