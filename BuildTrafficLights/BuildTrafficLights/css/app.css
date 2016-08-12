@@ -10,7 +10,7 @@
     box-shadow: 0 0 5px rgba(0,0,0, .8);
     overflow: hidden;
     padding: 10px;
-    width: 140px;
+    width: 130px;
     border-radius: 10px;
     float: left;
     margin: 0 20px 0 0;
@@ -36,7 +36,7 @@
 
     .trafficlight .trafficlightbuildname {
         display: block;
-        width: 120px;
+        width: 110px;
         word-wrap: break-word;
     }
 

@@ -22,9 +22,7 @@ export class TrafficLightsWidgetConfiguration {
                 this.widgetConfigurationContext.notify(this.WidgetHelpers.WidgetEvent.ConfigurationChange,
                     this.WidgetHelpers.WidgetEvent.Args(this.getCustomSettings()));
             });
-
-        document.getElementById("trafficlightswidgetconfiguration").classList.remove("hidden");
-
+        
         return this.WidgetHelpers.WidgetStatusHelper.Success();
     }
 
@@ -67,7 +65,6 @@ VSS.require(["TFS/Dashboards/WidgetHelpers"], (WidgetHelpers) => {
     VSS.register("BuildTrafficLightsWidget.Configuration", () => {
         var configuration = new TrafficLightsWidgetConfiguration(WidgetHelpers);
         return configuration;
-
     })
 
     VSS.notifyLoadSucceeded();

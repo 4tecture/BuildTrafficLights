@@ -14,7 +14,6 @@ define(["require", "exports", "TFS/Build/RestClient"], function (require, export
             this.selectBuildDefinition.addEventListener("change", function () {
                 _this.widgetConfigurationContext.notify(_this.WidgetHelpers.WidgetEvent.ConfigurationChange, _this.WidgetHelpers.WidgetEvent.Args(_this.getCustomSettings()));
             });
-            document.getElementById("trafficlightswidgetconfiguration").classList.remove("hidden");
             return this.WidgetHelpers.WidgetStatusHelper.Success();
         };
         TrafficLightsWidgetConfiguration.prototype.initializeOptions = function (widgetSettings) {
