@@ -28,7 +28,7 @@ export class TrafficLightsCollection {
 
     public updateBuildState() {
         var buildClient = BuildRestClient.getClient();
-        buildClient.getBuilds(this.projectname, [this.buildDefinitionId], undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, this.numberOfBuilds).then((buildResults: Contracts.Build[]) => {
+        buildClient.getBuilds(this.projectname, [this.buildDefinitionId], undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, this.numberOfBuilds).then((buildResults: Contracts.Build[]) => {
             this.builds = buildResults;
             this.renderLights();
 
@@ -43,7 +43,7 @@ export class TrafficLightsCollection {
     
         if (this.builds != null && this.builds.length > 0) {
             if (this.trafficLights == null || this.trafficLights.length != this.builds.length) {
-                while (this.trafficLightsElement.hasChildNodes()) { // todo
+                while (this.trafficLightsElement.hasChildNodes()) {
                     this.trafficLightsElement.removeChild(this.trafficLightsElement.lastChild);
                 }
                 this.trafficLights = [];

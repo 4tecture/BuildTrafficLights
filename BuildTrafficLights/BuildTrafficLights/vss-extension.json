@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "BuildTrafficLights",
-  "version": "0.1.18",
+  "version": "0.1.19",
   "name": "Build Traffic Lights",
   "scopes": [ "vso.build_execute" ],
   "description": "This extension allows you to add build traffic lights to your dashboard to visualize the state of a specific build definition and its builds.",

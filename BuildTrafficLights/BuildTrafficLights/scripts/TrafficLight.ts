@@ -1,4 +1,5 @@
-﻿import Contracts = require("TFS/Build/Contracts");
+﻿/// <reference path='../node_modules/vss-web-extension-sdk/typings/TFS.d.ts' />
+import Contracts = require("TFS/Build/Contracts");
 
 export class TrafficLight {
 

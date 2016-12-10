@@ -12,7 +12,7 @@
     <AssemblyName>BuildTrafficLights</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.1</TypeScriptToolsVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort>44300</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
@@ -69,10 +69,6 @@
     <TypeScriptCompile Include="scripts\TrafficLightsCollection.ts" />
     <TypeScriptCompile Include="scripts\TrafficLightsWidget.ts" />
     <TypeScriptCompile Include="scripts\TrafficLightsWidgetConfiguration.ts" />
-    <TypeScriptCompile Include="typings\jquery\jquery.d.ts" />
-    <TypeScriptCompile Include="typings\q\q.d.ts" />
-    <TypeScriptCompile Include="typings\knockout\knockout.d.ts" />
-    <TypeScriptCompile Include="typings\tsd.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <None Include="vss-extension.json" />

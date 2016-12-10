@@ -15,7 +15,7 @@ define(["require", "exports", "TFS/Build/RestClient", "scripts/TrafficLight"], f
         TrafficLightsCollection.prototype.updateBuildState = function () {
             var _this = this;
             var buildClient = BuildRestClient.getClient();
-            buildClient.getBuilds(this.projectname, [this.buildDefinitionId], undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, this.numberOfBuilds).then(function (buildResults) {
+            buildClient.getBuilds(this.projectname, [this.buildDefinitionId], undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, this.numberOfBuilds).then(function (buildResults) {
                 _this.builds = buildResults;
                 _this.renderLights();
                 buildClient.getDefinition(_this.buildDefinitionId, _this.projectname).then(function (buildDefinitionResult) {
