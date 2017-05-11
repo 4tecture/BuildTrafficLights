@@ -4,10 +4,15 @@
     "command": "grunt",
     "isShellCommand": true,
     "tasks": [
-        {
-            "taskName": "exec:package",
+         {
+            "taskName": "ts:build",
             "isBuildCommand": true,
             "problemMatcher": "$msCompile"
-        }
+        },
+      {
+        "taskName": "exec:package",
+        "isBuildCommand": true,
+        "problemMatcher": "$msCompile"
+      }
     ]
 }

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>TypeScript HTML App</title>
+    <link rel="stylesheet" href="css/app.css" type="text/css" />
+    <script src="lib/VSS.SDK.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        // Initialize the VSS sdk
+        VSS.init({
+            explicitNotifyLoaded: true,
+            setupModuleLoader: true,
+            usePlatformScripts: true,
+            usePlatformStyles: true
+        });
+
+        // Wait for the SDK to be initialized
+        VSS.ready(function () {
+            require(["TrafficLightsWidget"], function (tlwidget) {
+            });
+        });
+    </script>
+
+    <div class="widget">
+        <h2 class="title" id="buildDefinitionTitle"></h2>
+        <div class="content" id="content">
+
+        </div>
+    </div>
+</body>
+</html>

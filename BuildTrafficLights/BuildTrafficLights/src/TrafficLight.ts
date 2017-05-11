@@ -5,11 +5,12 @@ export class TrafficLight {
 
     trafficLightElement: HTMLDivElement;
     currentBuild: Contracts.Build;
-    timerToken: number;
+    timerToken: any;
     currentLightState: TrafficLightState;
 
     constructor(trafficLightElement: HTMLDivElement) {
         this.trafficLightElement = trafficLightElement;
+        this.currentLightState = TrafficLightState.None;
     }
 
     public UpdateBuildState(build: Contracts.Build) {

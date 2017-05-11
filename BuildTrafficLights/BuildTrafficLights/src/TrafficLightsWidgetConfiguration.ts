@@ -6,7 +6,7 @@ export class TrafficLightsWidgetConfiguration {
     public CurrentProject = VSS.getWebContext().project.name;
 
     selectBuildDefinition: HTMLSelectElement = <HTMLSelectElement>document.getElementById("selectBuildDefinition");
-    
+
     constructor(public WidgetHelpers) {
 
     }
@@ -22,7 +22,7 @@ export class TrafficLightsWidgetConfiguration {
                 this.widgetConfigurationContext.notify(this.WidgetHelpers.WidgetEvent.ConfigurationChange,
                     this.WidgetHelpers.WidgetEvent.Args(this.getCustomSettings()));
             });
-        
+
         return this.WidgetHelpers.WidgetStatusHelper.Success();
     }
 

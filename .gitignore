@@ -245,3 +245,4 @@ ModelManifest.xml
 .fake/
 *.vsix
 /BuildTrafficLights/BuildTrafficLights/.grunt
+/BuildTrafficLights/BuildTrafficLights/dist
